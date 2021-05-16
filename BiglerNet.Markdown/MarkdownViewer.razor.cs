@@ -1,6 +1,6 @@
 ﻿using Microsoft.AspNetCore.Components;
 
-namespace Blazor.Markdown
+namespace BiglerNet.Markdown
 {
     public partial class MarkdownViewer : ComponentBase
     {

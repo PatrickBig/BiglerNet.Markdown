@@ -4,7 +4,7 @@ using Microsoft.AspNetCore.Components.Web;
 using System;
 using System.Diagnostics.CodeAnalysis;
 
-namespace Blazor.Markdown
+namespace BiglerNet.Markdown
 {
     public partial class MarkdownEditor : InputBase<string>
     {

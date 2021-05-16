@@ -3,9 +3,9 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 16
 VisualStudioVersion = 16.0.31205.134
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Markdown", "Blazor.Markdown\Blazor.Markdown.csproj", "{85C8C557-0A24-46A7-9409-C8F543C83B68}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiglerNet.Markdown", "BiglerNet.Markdown\BiglerNet.Markdown.csproj", "{85C8C557-0A24-46A7-9409-C8F543C83B68}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Blazor.Markdown.Sample", "Blazor.Markdown.Sample\Blazor.Markdown.Sample.csproj", "{64DBFE83-319B-4052-B7EB-EE2CF34C7F48}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BiglerNet.Markdown.Sample", "BiglerNet.Markdown.Sample\BiglerNet.Markdown.Sample.csproj", "{64DBFE83-319B-4052-B7EB-EE2CF34C7F48}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

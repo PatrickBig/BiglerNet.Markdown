@@ -8,7 +8,7 @@ using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Blazor.Markdown.Sample
+namespace BiglerNet.Markdown.Sample
 {
     public class Program
     {

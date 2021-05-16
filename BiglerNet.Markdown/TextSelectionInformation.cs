@@ -1,4 +1,4 @@
-﻿namespace Blazor.Markdown
+﻿namespace BiglerNet.Markdown
 {
     /// <summary>
     /// Information about the currently selected text in the editor control.

@@ -11,7 +11,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\Blazor.Markdown\Blazor.Markdown.csproj" />
+    <ProjectReference Include="..\BiglerNet.Markdown\BiglerNet.Markdown.csproj" />
   </ItemGroup>
 
 </Project>
