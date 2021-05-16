@@ -1,4 +1,4 @@
 ﻿@inherits InputBase<string>
-<textarea rows="@Rows" @onkeypress="Keypress" @onselect="SelectionChanged">
+<textarea rows="@Rows" @onkeypress="Keypress" @onselect="SelectionChanged" @bind="CurrentValue" class="@CssClass" @attributes="AdditionalAttributes">
     @Value
 </textarea>
