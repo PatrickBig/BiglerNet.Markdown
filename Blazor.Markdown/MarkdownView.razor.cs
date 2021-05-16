@@ -1,9 +1,4 @@
 ﻿using Microsoft.AspNetCore.Components;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Blazor.Markdown
 {
@@ -11,5 +6,12 @@ namespace Blazor.Markdown
     {
         [Parameter]
         public string Content { get; set; }
+
+        public string Html { get; private set; }
+
+        protected override void OnInitialized()
+        {
+            Html = Markdig.Markdown.ToHtml(Content);
+        }
     }
 }
