@@ -1,0 +1,12 @@
+﻿@page "/"
+
+@if (input != null)
+{
+    <EditForm Model="input">
+        <MarkdownEditor @bind-Value="input" />
+    </EditForm>
+}
+
+@code {
+    string input = "# Sample header\r\nSome text";
+}
