@@ -26,8 +26,9 @@ jobs:
         id: gitversion
         uses: gittools/actions/gitversion/execute@v0.9.9
 
-      - run: |
-          sed -i 's@<Version>0.0.1</Version>@<Version>${{ steps.gitversion.outputs.nuGetVersionV2 }}</Version>@g' BiglerNet.Markdown.csproj
+      - name: Set NuGet Package Version
+        run: |
+          sed -i 's@<Version>0.0.1</Version>@<Version>${{ steps.gitversion.outputs.nuGetVersionV2 }}</Version>@g' BiglerNet.Markdown/BiglerNet.Markdown.csproj
 
       # Publish
       - name: publish on version change
