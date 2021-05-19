@@ -7,6 +7,8 @@ This component relies heavily on [Markdig](https://github.com/xoofx/markdig).
 
 Install `BiglerNet.Markdown` package via dotnet CLI or the NuGet package manager UI.
 
+Add `@using BiglerNet.Markdown` to your `_Imports.razor`.
+
 # Usage
 
 ## Viewing Markdown
