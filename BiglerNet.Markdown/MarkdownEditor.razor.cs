@@ -1,8 +1,10 @@
 ﻿using Microsoft.AspNetCore.Components;
 using Microsoft.AspNetCore.Components.Forms;
 using Microsoft.AspNetCore.Components.Web;
+using Microsoft.JSInterop;
 using System;
 using System.Diagnostics.CodeAnalysis;
+using System.Threading.Tasks;
 
 namespace BiglerNet.Markdown
 {
@@ -11,6 +13,9 @@ namespace BiglerNet.Markdown
         [Parameter]
         public string Rows { get; set; }
 
+        [Inject]
+        private IJSRuntime JSRuntime { get; set; }
+
         protected override bool TryParseValueFromString(string value, [MaybeNullWhen(false)] out string result, [NotNullWhen(false)] out string validationErrorMessage)
         {
             result = value;
@@ -18,14 +23,34 @@ namespace BiglerNet.Markdown
             return true;
         }
 
-        private void Keypress(KeyboardEventArgs args)
+        private async Task Keypress(KeyboardEventArgs args)
         {
-            Console.WriteLine("Logging");
+            if (args.CtrlKey && args.Code == "KeyB")
+            {
+                await BoldSelectedText();
+            }
+            else if (args.CtrlKey && args.Code == "KeyI")
+            {
+                await ItalicizeText();
+            }
         }
 
-        private void SelectionChanged(EventArgs e)
+        private async Task BoldSelectedText()
         {
-            Console.WriteLine("Here");
+            var selectionInformation = await JSRuntime.InvokeAsync<TextSelectionInformation>("getSelectedTextInformation");
+
+            Value = MarkdownFormatter.SurroundText(Value, "**", selectionInformation);
+
+            StateHasChanged();
+        }
+
+        private async Task ItalicizeText()
+        {
+            var selectionInformation = await JSRuntime.InvokeAsync<TextSelectionInformation>("getSelectedTextInformation");
+
+            Value = MarkdownFormatter.SurroundText(Value, "*", selectionInformation);
+
+            StateHasChanged();
         }
     }
 }
