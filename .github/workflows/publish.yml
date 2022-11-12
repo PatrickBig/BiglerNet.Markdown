@@ -36,5 +36,5 @@ jobs:
         run: dotnet pack --configuration Release BiglerNet.Markdown/BiglerNet.Markdown.csproj --output package
 
       - name: Push package
-        run: dotnet nuget push ./package/*.nupkg --api-key ${{secrets.NUGET_KEY}} --source https://api.nuget.org
+        run: dotnet nuget push ./package/*.nupkg --api-key ${{secrets.NUGET_KEY}} --source https://www.nuget.org
         
