@@ -3,41 +3,36 @@ using Microsoft.AspNetCore.Components;
 
 namespace BiglerNet.Markdown
 {
+    /// <summary>
+    /// Renders Markdown as HTML.
+    /// </summary>
     public partial class MarkdownViewer : ComponentBase
     {
-        private static MarkdownPipeline pipeline = new MarkdownPipelineBuilder()
+        private static readonly MarkdownPipeline _pipeline = new MarkdownPipelineBuilder()
             .UseAdvancedExtensions()
             .UseEmojiAndSmiley()
             .Build();
 
-        private string _content;
-
-
+        /// <summary>
+        /// Gets or sets the content to be rendered.
+        /// </summary>
         [Parameter]
-        public string Content
-        {
-            get
-            {
-                return _content;
-            }
-            set
-            {
-                _content = value;
-            }
-        }
+        [EditorRequired]
+        public string Content { get; set; }
 
-        [Parameter]
-        public string LinkTarget { get; set; }
-
+        /// <summary>
+        /// Gets the rendered HTML.
+        /// </summary>
         public string Html { get; private set; }
 
+        /// <inheritdoc/>
         protected override void OnInitialized()
         {
             base.OnInitialized();
 
-            if (!string.IsNullOrEmpty(_content))
+            if (!string.IsNullOrEmpty(Content))
             {
-                Html = Markdig.Markdown.ToHtml(Content, pipeline);
+                Html = Markdig.Markdown.ToHtml(Content, _pipeline);
             }
         }
     }
