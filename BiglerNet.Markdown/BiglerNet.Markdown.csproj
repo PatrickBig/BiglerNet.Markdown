@@ -19,7 +19,7 @@
 
   <ItemGroup>
     <PackageReference Include="Markdig" Version="0.37.0" />
-    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="1.1.1">
+    <PackageReference Include="Microsoft.SourceLink.GitHub" Version="8.0.0">
       <PrivateAssets>all</PrivateAssets>
       <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
     </PackageReference>
@@ -29,7 +29,7 @@
     <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="6.0.32" />
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net8.0'">
-    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Components.Web" Version="8.0.7" />
   </ItemGroup>
 
   <ItemGroup>
@@ -44,10 +44,7 @@
   </ItemGroup>
 
   <ItemGroup>
-    <None Update="BiglerNetLogo.png">
-      <Pack>True</Pack>
-      <PackagePath>\</PackagePath>
-    </None>
+    <None Include="BiglerNetLogo.png" Pack="true" PackagePath="" />
   </ItemGroup>
 
 </Project>
